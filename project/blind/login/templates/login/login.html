@@ -1,0 +1,32 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/index.html' %}
+{% block base %}
+<h1 align="center">LOGIN</h1>
+<table align="center">
+	<form method="post">
+        {% csrf_token %}
+		<tr>
+			<td>USERNAME</td>
+			<td><input type="text" name="log" required=""></td>
+
+			</td>
+		</tr>
+		<tr>
+			<td>PASSWORD</td>
+			<td><input type="Password" name="pass" required=""></td>
+		</tr>
+		<td></td>
+		<td><input type="submit" name="sub" value="LOGIN"> </td>
+
+
+	</form>
+</table>
+{% endblock %}
+
+{#</body>#}
+{#</html>#}

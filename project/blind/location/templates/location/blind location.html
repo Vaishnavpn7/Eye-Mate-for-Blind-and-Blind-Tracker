@@ -1,0 +1,44 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/caretaker.html' %}
+{% block base %}
+	<h1 align="View Location"></h1>
+		<table align="center" class="table table-bordered">
+
+
+
+			<tr>
+
+                <td><b>Blind Person Name</b></td>
+
+                <td><b>Latitude</b></td>
+                <td><b>Longitude</b></td>
+			</tr>
+
+            {% for i in location %}
+
+			<tr>
+
+				<td>{{ i.name }}</td>
+				<td>{{ i.latitude }}</td>
+				<td>{{ i.longitude }}</td>
+
+			</tr>			
+            {% endfor %}
+			
+			
+
+		</table>
+		
+		
+	
+	
+</table>
+{% endblock %}
+
+{#</body>#}
+{#</html>#}

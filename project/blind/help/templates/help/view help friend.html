@@ -1,0 +1,50 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+
+{% extends 'temp/friend home.html' %}
+{% block base %}
+	<h1 align="View Blind Person"></h1>
+		<table align="center" class="table table-bordered">
+
+
+
+
+            <td><b>Name</b></td>
+{#            <td><b>Contact</b></td>#}
+{#            <td><b>image</b></td>#}
+            <td><b>Latitude</b></td>
+            <td><b>Longitude</b></td>
+            <td><b>Date</b></td>
+            <td><b>Time</b></td>
+
+
+		</tr>
+
+            {% for i in helpfrind %}
+		<tr>
+			<td>Arjun</td>
+{#			<td>{{ i.contact }}</td>#}
+{#			<td>{{ i.image }}</td>#}
+			<td>{{ i.latitude }}</td>
+			<td>{{ i.longitude }}</td>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+
+
+
+		</tr>
+
+            {% endfor %}
+
+
+
+
+</table>
+{% endblock %}
+{##}
+{#</body>#}
+{#</html>#}

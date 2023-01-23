@@ -1,0 +1,61 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/friend home.html' %}
+{% block base %}
+<h1 align="center">SEARCH BLIND PERSON</h1>
+<table align="center">
+	<form method="post">
+        {% csrf_token %}
+		
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name="name" required=""></td>
+		</tr>
+		<TD></TD>
+		<td><input type="submit" name="sub" value="SEARCH" class="btn btn-danger"></td>
+		
+	</form>
+	
+</table>
+    <br><br>
+
+<table align="center" class="table table-bordered">
+
+	<tr>
+
+
+		
+        <td><b>Blind Person name</b></td>
+        <td><b>Place</b></td>
+        <td><b>District</b></td>
+        <td><b>Pin</b></td>
+        <td><b>Image</b></td>
+        <td></td>
+
+
+	</tr>
+	<tr>
+		{% for i in objval %}
+
+		<td>{{ i.name}}</td>
+		<td>{{ i.place }}</td>
+		<td>{{ i.district  }}</td>
+		<td>{{ i.pin }}</td>
+        <td><img src="/static/{{ i.image }}" style="height: 25%; width: 25% ;"></td>
+		<td><a href="/blind_reg/req/{{ i.blind_id }}" class="btn btn-danger">Sent Request</a></td>
+	</tr>
+
+    {% endfor %}
+
+	
+
+
+</table>
+
+{% endblock %}
+{#</body>#}
+{#</html>#}

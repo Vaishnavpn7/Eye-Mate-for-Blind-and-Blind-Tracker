@@ -1,0 +1,46 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/admin_home.html' %}
+{% block base %}
+	<h1 align="View Blind Person"></h1>
+		<table align="center" class="table table-bordered">
+	
+		
+		<tr>
+{#			<td>Blind person_id</td>#}
+            <td><b>Name</b></td>
+            <td><b>Place</b></td>
+            <td><b>District</b></td>
+            <td><b>Pin</b></td>
+            <td><b>Contact</b></td>
+            <td><b>Email</b></td>
+            <td><b>image</b></td>
+			
+
+		</tr>
+            {% for i in details %}
+		<tr>
+{#			<td>{{ i.blind_id }}</td>#}
+			<td>{{ i.name }}</td>
+			<td>{{ i.place }}</td>
+			<td>{{ i.district }}</td>
+			<td>{{ i.pin }}</td>
+			<td>{{ i.contact }}</td>
+			<td>{{ i.email }}</td>
+			<td><img src="/static/{{ i.image }}" style="height: 15% ; width: 15% ;"></td>
+			
+
+
+		</tr>
+            {% endfor %}
+		
+	
+	
+</table>
+{% endblock %}
+{#</body>#}
+{#</html>#}

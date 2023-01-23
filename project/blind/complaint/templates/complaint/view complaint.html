@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+{#</head>#}
+{#<body>#}
+{% extends 'temp/admin_home.html' %}
+{% block base %}
+	<h1 align="View Complaint"></h1>
+		<table align="center" class="table table-bordered">
+
+		<tr>
+
+
+{#			<td>Caretaker Name</td>#}
+
+
+            <h1>
+                <td><b>Complaint</b></td>
+                <td><b>Date</b></td>
+                <td><b>Time</b></td>
+                <td></td>
+            </h1>
+
+
+		</tr>
+
+            {% for i in complaint %}
+
+		<tr>
+
+			<td>{{ i.complaint }}</td>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+
+
+			<td><a href="/complaint/app/{{ i.comp_id }}" class="btn btn-danger">Post Reply</a>
+{#            <td><a href="{% url 'app' idd=i.comp_id %}">#}
+			</td>
+
+
+
+		</tr>
+            {% endfor %}
+
+
+
+
+</table>
+{% endblock %}
+{##}
+{#</body>#}
+{#</html>#}

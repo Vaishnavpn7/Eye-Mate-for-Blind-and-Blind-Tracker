@@ -1,0 +1,26 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{#<body>#}
+{% extends 'temp/caretaker.html' %}
+{% block base %}
+<h1 align="center">COMPLAINT</h1>
+<table align="center">
+	<form method="post">
+        {% csrf_token %}
+		
+		<tr>
+			<td>Complaint</td>
+			<td><textarea name="comp" rows="5" required=""></textarea></td>
+		</tr>
+		<TD></TD>
+		<td><input type="submit" name="sub" value="POST" class="btn btn-danger"></td>
+		
+	</form>
+	
+</table>
+{% endblock %}
+{#</body>#}
+{#</html>#}

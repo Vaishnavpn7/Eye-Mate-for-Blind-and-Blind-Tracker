@@ -1,0 +1,64 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#{% extends 'temp/caretaker.html' %}#}
+{% extends 'temp/admin_home.html' %}
+{% block base %}
+<h1 align="View Location"></h1>
+	<h1 align="Manage Friend"></h1>
+		<table align="center" class="table table-bordered">
+
+
+
+{#			<td>friend_id</td>#}
+            <h1 align="center">
+                <td><b>NAME</b></td>
+                <td><b>PLACE</b></td>
+                <td><b>DISTRICT</b></td>
+                <td><b>PIN</b></td>
+                <td><b>CONTACT</b></td>
+                <td><b>EMAIL</b></td>
+                <td><b>IMAGE</b></td>
+                <td></td>
+            </h1>
+
+		</tr>
+
+		<tr>
+
+            {% for i in details %}
+
+			<h1>
+                <td><b>{{ i.name }}</b></td>
+                <td><b>{{ i.place }}</b></td>
+                <td><b>{{ i.district }}</b></td>
+                <td><b>{{ i.pin }}</b></td>
+                <td><b>{{ i.contact }}</b></td>
+                <td><b>{{ i.email}}</b></td>
+            </h1>
+			    <td><img src="/static/{{ i.image }}" style="height: 20%; width: 20%"></td>
+
+
+{#			<td><a href="{% url 'approved' idd=i.friend_id%}">Approve</a>#}
+{#                <td><a href="/friend/approve/{{ i.friend_id}}" class="btn btn-primary">Approve</a>#}
+{#			<a href="{% url 'reject' idd=i.friend_id %}">Reject</a></td>#}
+{#                <td><a href="/friend/reject/{{ i.friend_id}}" class="btn btn-danger">Reject</a>#}
+
+
+
+		</tr>
+            {% endfor %}
+
+
+
+
+
+</table>
+{% endblock %}
+
+{#</body>#}
+{#</html>#}

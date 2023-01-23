@@ -1,0 +1,41 @@
+{% extends 'temp/admin_home.html' %}
+{% block base %}
+	<h1 align="Manage Caretaker"></h1>
+		<table align="center" class="table table-bordered">
+	
+		
+{#            <td>Caretaker_id</td>#}
+            <td><b>Caretaker Name</b></td>
+            <td><b>Place</b></td>
+            <td><b>District</b></td>
+            <td><b>Pin</b></td>
+            <td><b>Contact</b></td>
+            <td><b>Email</b></td>
+            <td><b>Image</b></td>
+			<td></td>
+
+		</tr>
+            {% for i in fulldetails %}
+
+		<tr>
+			<td>{{ i.name}}</td>
+			<td>{{ i.place }}</td>
+			<td>{{ i.district }}</td>
+			<td>{{ i.pin }}</td>
+			<td>{{ i.contact }}</td>
+			<td>{{ i.email }}</td>
+			<td><img src="/static/{{ i.image }}" style="height: 20%; width: 20% ;"></td>
+			
+{#			<td><a href="{% url 'approve' idd=i.caretak_id %}">Approve</a>#}
+                <td><a href="/caretaker/approve/{{ i.caretak_id}}" class="btn btn-primary">Approve</a>
+                    <td><a href="/caretaker/reject/{{ i.caretak_id}}" class="btn btn-danger">Reject</a>
+{#			<a href="{% url 'rejected' idd=i.caretak_id %}">Reject</a></td>#}
+			
+
+
+		</tr>
+		
+	{% endfor %}
+	
+</table>
+{% endblock %}
